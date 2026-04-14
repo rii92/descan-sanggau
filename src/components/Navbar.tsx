@@ -5,6 +5,16 @@ import { Menu, X, Mountain } from 'lucide-react'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault()
+    setIsOpen(false)
+    
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-lg border-b-4 border-primary-600">
       <div className="container-custom">
@@ -26,16 +36,16 @@ export default function Navbar() {
             <Link to="/" className="text-slate-700 hover:text-primary-600 transition-colors font-semibold">
               Beranda
             </Link>
-            <a href="#tentang" onClick={() => setIsOpen(false)} className="text-slate-700 hover:text-primary-600 transition-colors font-semibold">
+            <a href="#tentang" onClick={(e) => handleScroll(e, 'tentang')} className="text-slate-700 hover:text-primary-600 transition-colors font-semibold">
               Tentang
             </a>
-            <a href="#desa" onClick={() => setIsOpen(false)} className="text-slate-700 hover:text-primary-600 transition-colors font-semibold">
+            <a href="#desa" onClick={(e) => handleScroll(e, 'desa')} className="text-slate-700 hover:text-primary-600 transition-colors font-semibold">
               Desa Kami
             </a>
-            <a href="#statistik" onClick={() => setIsOpen(false)} className="text-slate-700 hover:text-primary-600 transition-colors font-semibold">
+            <a href="#statistik" onClick={(e) => handleScroll(e, 'statistik')} className="text-slate-700 hover:text-primary-600 transition-colors font-semibold">
               Statistik
             </a>
-            <a href="#kontak" onClick={() => setIsOpen(false)} className="text-slate-700 hover:text-primary-600 transition-colors font-semibold">
+            <a href="#kontak" onClick={(e) => handleScroll(e, 'kontak')} className="text-slate-700 hover:text-primary-600 transition-colors font-semibold">
               Kontak
             </a>
           </div>
@@ -55,16 +65,16 @@ export default function Navbar() {
             <Link to="/" className="block text-slate-700 hover:text-primary-700 hover:bg-primary-100 transition-all py-3 px-3 rounded-lg font-semibold">
               Beranda
             </Link>
-            <a href="#tentang" onClick={() => setIsOpen(false)} className="block text-slate-700 hover:text-primary-700 hover:bg-primary-100 transition-all py-3 px-3 rounded-lg font-semibold">
+            <a href="#tentang" onClick={(e) => handleScroll(e, 'tentang')} className="block text-slate-700 hover:text-primary-700 hover:bg-primary-100 transition-all py-3 px-3 rounded-lg font-semibold">
               Tentang
             </a>
-            <a href="#desa" onClick={() => setIsOpen(false)} className="block text-slate-700 hover:text-primary-700 hover:bg-primary-100 transition-all py-3 px-3 rounded-lg font-semibold">
+            <a href="#desa" onClick={(e) => handleScroll(e, 'desa')} className="block text-slate-700 hover:text-primary-700 hover:bg-primary-100 transition-all py-3 px-3 rounded-lg font-semibold">
               Desa Kami
             </a>
-            <a href="#statistik" onClick={() => setIsOpen(false)} className="block text-slate-700 hover:text-primary-700 hover:bg-primary-100 transition-all py-3 px-3 rounded-lg font-semibold">
+            <a href="#statistik" onClick={(e) => handleScroll(e, 'statistik')} className="block text-slate-700 hover:text-primary-700 hover:bg-primary-100 transition-all py-3 px-3 rounded-lg font-semibold">
               Statistik
             </a>
-            <a href="#kontak" onClick={() => setIsOpen(false)} className="block text-slate-700 hover:text-primary-700 hover:bg-primary-100 transition-all py-3 px-3 rounded-lg font-semibold">
+            <a href="#kontak" onClick={(e) => handleScroll(e, 'kontak')} className="block text-slate-700 hover:text-primary-700 hover:bg-primary-100 transition-all py-3 px-3 rounded-lg font-semibold">
               Kontak
             </a>
           </div>
